@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+	<!-- Safe Software, 2013 -->
+	<!-- http://www.safe.com -->
+
+	<title>FME Server Real Time Map Creation Using WebSockets</title>
+
+	<!-- JQuery -->
+	<script src="libs/jquery-1.10.1.js"></script>
+
+	<!-- Bootstrap -->
+	<!--http://getbootstrap.com/2.3.2/-->
+	<script src="libs/bootstrap/js/bootstrap.js"></script>
+	<link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="libs/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+	<!-- Google Maps -->
+	<link href="https://google-developers.appspot.com/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.16&libraries=drawing"></script>
+
+	<!-- FME Server Javascript API -->
+    <script type="text/javascript" src="http://api.fmeserver.com/js/v1.1/FMEServer.js"></script>
+
+	<!-- Stylesheet for demo/tutorial -->
+	<link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+			<div class="brand">FME Server<span class="hidden-tiny"> Real Time Map Creation Using WebSockets</span></div>
+
+			<div class="nav-collapse collapse">
+				<a href="https://github.com/safesoftware/fmepedia-real-time-drawing" class="btn">
+					<img src="libs/github.png"> Fork GitHub
+				</a>
+				<a href="https://github.com/safesoftware/fmepedia-real-time-drawing/archive/master.zip" class="btn">
+					<i class="icon-download-alt"></i> Download Zip
+				</a>
+			</div>
+			<span class="hidden-phone" id="safe-ribbon"><a href="http://www.safe.com">Powered by FME</a></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<ul>
+				<li>Add polygons by using the toolbar on the top of the map.</li>
+				<li>Edit polygons by choosing the hand tool and hovering over the polygons and dragging their vertices.</li>
+				<li>Delete polygons by right clicking on them. </li>
+			</ul>
+		</div>
+		<div id="map_canvas"></div>
+		<div class="row">
+			<div class="span6">
+				<h2>Messages sent</h2>
+				<p><a class="btn" onclick="clearlog('sent_log')">Clear log</a></p>
+				<div id="sent_log" class="log"></div>
+			</div>
+			<div class="span6">
+				<h2>Messages received</h2>
+				<p><a class="btn" onclick="clearlog('rcvd_log')">Clear log</a></p>
+				<div id="rcvd_log" class="log"></div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	var location, map;
+	var updateSender, pageLoadReceiver, pageLoadSender;
+	var polygonArray = [];
+	window.onload = function initialize() {
+
+		FMEServer.init({
+			server : "fmepedia2014-safe-software.fmecloud.com",
+			token : "8be243c0fc2f5f34977050bdab57ebbdd3e72aa2"
+		});
+
+		/*** FME Server WebSocket initialization ***/
+		// Sends edits to FME Server
+		updateSender = FMEServer.getWebSocketConnection('real_time_drawing_update_in');
+
+		// Receives saved edits from FME Server
+		updateReceiver = FMEServer.getWebSocketConnection('real_time_drawing_update_out');
+
+		// On page load, sends a request to FME Server to get all existing items
+		pageLoadSender = FMEServer.getWebSocketConnection('real_time_drawing_on_page_load_in');
+
+		// Remains open until FME Server sends all existing items to it
+		pageLoadReceiver = FMEServer.getWebSocketConnection('real_time_drawing_on_page_load_out');
+
+		/*** Google Maps initialization ***/
+		var myLatLng = new google.maps.LatLng(49.138077,-122.857472);
+		var myOptions = {
+			zoom: 11,
+			center: myLatLng
+		}
+
+		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		var drawingManager = new google.maps.drawing.DrawingManager({
+			drawingMode: google.maps.drawing.OverlayType.MARKER,
+			drawingControl: true,
+			drawingControlOptions: {
+			  position: google.maps.ControlPosition.TOP_CENTER,
+			  drawingModes: [
+					google.maps.drawing.OverlayType.POLYGON,
+			  ]
+			},
+			markerOptions: {
+			  icon: 'images/beachflag.png'
+			},
+			polygonOptions : {
+				strokeColor : "#FF0000",
+				strokeOpacity : 0.8,
+				strokeWeight : 2,
+				fillColor : "#FF0000",
+				fillOpacity : 0.35
+			}
+		  });
+		drawingManager.setMap(map);
+
+		google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
+			drawingManager.setDrawingMode(null);
+			generateUpdateRequest(polygon, null, 'I');
+		});
+
+		// Sets up event listeners for existing polygons
+		function setupListeners(poly) {
+			google.maps.event.addListener(poly.getPath(), 'set_at', function() {
+				//Post an update
+				generateUpdateRequest(poly, poly.id, 'U');
+			});
+
+			google.maps.event.addListener(poly.getPath(), 'insert_at', function() {
+				//post an update
+				generateUpdateRequest(poly, poly.id, 'U');
+			});
+
+			google.maps.event.addListener(poly, 'rightclick', function(event) {
+				for(i in polygonArray) {
+					if(this === polygonArray[i]) {
+						polygonArray[i].setMap(null);
+						polygonArray.splice(i, 1);
+						//Post a delete
+						generateUpdateRequest(poly, poly.id, 'D');
+					}
+				}
+			});
+
+			google.maps.event.addListener(poly, 'mouseover', function(event) {
+				this.setEditable(true);
+			});
+
+			google.maps.event.addListener(poly, 'mouseout', function(event) {
+				this.setEditable(false);
+			});
+		}
+
+		// Sends a request to the FME Server containing the edit the user
+		// has made. FME Server parses the request and updates the database
+		function generateUpdateRequest(polygon, polyID, polyUpdateType) {
+			var gglePolyArray = polygon.getPath();
+			var jsonStr = '';
+			gglePolyArray.forEach(function(item, index) {
+				if(index == (gglePolyArray.length - 1)) {
+					jsonStr = jsonStr +'[' + item.lng() + ',' + item.lat() + ']';
+				} else {
+					jsonStr = jsonStr +'[' + item.lng() + ',' + item.lat() + '],';
+				}
+			});
+			jsonStr = "{ 'ws_op' : 'send', 'ws_msg' : "+ "'"+ '{"geometry":{ "type": "Polygon", "coordinates": [['+ jsonStr +']]' +'}, "id": '+ '"' + polyID + '", "operation": ' + '"' + polyUpdateType + '"' +"}'}";
+			updateSender.send(jsonStr);
+			polygon.setMap(null);
+			log_message(jsonStr, 'sent_log');
+		}
+
+		// Create google maps polygon
+		function createPolygon(geometry, polyID){
+			var polyCoords = [];
+			var coords = geometry.coordinates[0];
+			for(var j = 0; j < coords.length; j++) {
+				var lng = coords[j][0];
+				var lat = coords[j][1];
+				polyCoords.push(new google.maps.LatLng(lat, lng));
+			}
+			var poly = new google.maps.Polygon({
+				paths : polyCoords,
+				id : polyID,
+				strokeColor : "#FF0000",
+				strokeOpacity : 0.8,
+				strokeWeight : 2,
+				fillColor : "#FF0000",
+				fillOpacity : 0.35
+			});
+			poly.setMap(map);
+			polygonArray.push(poly);
+			setupListeners(poly);
+		}
+
+		// Remove google maps polygon
+		function removePolygon(polyID){
+			for(i in polygonArray) {
+				if(parseInt(polyID) === parseInt(polygonArray[i].id)) {
+					polygonArray[i].setMap(null);
+					polygonArray.splice(i, 1);
+				}
+			}
+		}
+
+		// Receives items changes in the database from the FME Server
+		// and updates the view
+		updateReceiver.onmessage = function(event) {
+			log_message(event.data, 'rcvd_log');
+			var jsonBody = JSON.parse(event.data);
+			var geometry = jsonBody.geometry;
+			var inputID  = jsonBody.id;
+			switch(jsonBody.operation) {
+				case 'I':
+					// create a new item from input coordinates
+					createPolygon(geometry, inputID);
+					break;
+				case 'U':
+					// remove old item from the map
+					removePolygon(inputID);
+					// create a new item with the updated coordinates
+					createPolygon(geometry, inputID);
+					break;
+				case 'D':
+					// remove item from the map
+					removePolygon(inputID);
+					break;
+				default:
+			}
+		}
+
+		// Wait for the FME Server to send the existing items
+		// on the database, then add them to map and close connection
+		pageLoadReceiver.onmessage = function(event) {
+			log_message(event.data, 'rcvd_log');
+			var jsonBody = JSON.parse(event.data);
+
+			// As of June 2014, the google maps API does not provide easy access
+			// to modifying data features' geometries. Whenever such capability
+			// is added, we can simply use the API's addGeoJson call to parse the
+			// input
+			/*map.data.addGeoJson(jsonBody);
+			map.data.setStyle(function(feature) {
+				return{
+					strokeColor: '#FF0000',
+					strokeOpacity: 0.8,
+					strokeWeight: 2,
+					fillColor: '#FF0000',
+					fillOpacity: 0.35,
+				};
+			});
+			*/
+			var features = jsonBody.features;
+			for(var i = 0; i < features.length; i++){
+				createPolygon(features[i].geometry, features[i].id);
+			}
+			pageLoadReceiver.close();
+		}
+
+		// When connection is established, send a request to FME Server
+		// For the existing items in the database, then close connection
+	  pageLoadSender.addEventListener("open", function(event) {
+			pageLoadSender.send("{ 'ws_op' : 'send', 'ws_msg' :''}");
+			pageLoadSender.close();
+		})
+	}
+
+	/*** Function to log sent and received WebSocket messages ***/
+	function log_message(message, div_id) {
+		var div = document.getElementById(div_id);
+		div.innerHTML = '<p>'+new Date().toLocaleTimeString()+'<br>'+message+'</p>' + div.innerHTML;
+	}
+
+	/*** Clear logs, triggered by button click ***/
+	function clearlog(div_id) {
+		var div = document.getElementById(div_id);
+		div.innerHTML = '';
+	}
+	</script>
+</body>
+
+</html>
