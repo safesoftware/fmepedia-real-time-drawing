@@ -63,25 +63,35 @@
 				<li>Delete polygons by right clicking on them. </li>
 			</ul>
 		</div>
-		<div id="map_canvas"></div>
-		<div class="row">
+		<div class= "row">
 			<div class="span6">
-				<h2>Messages sent</h2>
-				<p><a class="btn" onclick="clearlog('sent_log')">Clear log</a></p>
-				<div id="sent_log" class="log"></div>
+				<h2>Edit</h2>
+				<div id="map_canvas"></div>
+				<div class="row">
+					<div class="span6">
+						<h3>Messages sent</h3>
+						<p><a class="btn" onclick="clearlog('sent_log')">Clear log</a></p>
+						<div id="sent_log" class="log"></div>
+					</div>
+				</div>
 			</div>
 			<div class="span6">
-				<h2>Messages received</h2>
-				<p><a class="btn" onclick="clearlog('rcvd_log')">Clear log</a></p>
-				<div id="rcvd_log" class="log"></div>
+				<h2>Display</h2>
+				<div id="map_canvas2" ></div>
+					<div class="span6">
+						<h3>Messages received</h3>
+						<p><a class="btn" onclick="clearlog('rcvd_log')">Clear log</a></p>
+						<div id="rcvd_log" class="log"></div>
+					</div>
 			</div>
 		</div>
 	</div>
 
 	<script type="text/javascript">
-	var location, map;
-	var updateSender, pageLoadReceiver, pageLoadSender;
-	var polygonArray = [];
+	var location, editMap, viewMap;
+	var updateSender, pageLoadReceiver, pageLoadSender, pageLoadReceiver;
+	var editPolygonArray = [];
+	var viewPolygonArray = [];
 	window.onload = function initialize() {
 
 		FMEServer.init({
@@ -109,7 +119,9 @@
 			center: myLatLng
 		}
 
-		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		editMap = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		viewMap = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
+
 		var drawingManager = new google.maps.drawing.DrawingManager({
 			drawingMode: google.maps.drawing.OverlayType.MARKER,
 			drawingControl: true,
@@ -130,7 +142,7 @@
 				fillOpacity : 0.35
 			}
 		  });
-		drawingManager.setMap(map);
+		drawingManager.setMap(editMap);
 
 		google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
 			drawingManager.setDrawingMode(null);
@@ -150,10 +162,8 @@
 			});
 
 			google.maps.event.addListener(poly, 'rightclick', function(event) {
-				for(i in polygonArray) {
-					if(this === polygonArray[i]) {
-						polygonArray[i].setMap(null);
-						polygonArray.splice(i, 1);
+				for(i in editPolygonArray) {
+					if(this === editPolygonArray[i]) {
 						//Post a delete
 						generateUpdateRequest(poly, poly.id, 'D');
 					}
@@ -188,7 +198,7 @@
 		}
 
 		// Create google maps polygon
-		function createPolygon(geometry, polyID){
+		function createPolygon(geometry, polyID, addMap, addArray, editable){
 			var polyCoords = [];
 			var coords = geometry.coordinates[0];
 			for(var j = 0; j < coords.length; j++) {
@@ -205,17 +215,21 @@
 				fillColor : "#FF0000",
 				fillOpacity : 0.35
 			});
-			poly.setMap(map);
-			polygonArray.push(poly);
-			setupListeners(poly);
+			poly.setMap(addMap);
+			addArray.push(poly);
+			if(editable){
+				setupListeners(poly);
+			}
 		}
 
 		// Remove google maps polygon
 		function removePolygon(polyID){
-			for(i in polygonArray) {
-				if(parseInt(polyID) === parseInt(polygonArray[i].id)) {
-					polygonArray[i].setMap(null);
-					polygonArray.splice(i, 1);
+			for(i in editPolygonArray) {
+				if(parseInt(polyID) === parseInt(editPolygonArray[i].id)) {
+					editPolygonArray[i].setMap(null);
+					editPolygonArray.splice(i, 1);
+					viewPolygonArray[i].setMap(null);
+					viewPolygonArray.splice(i, 1);
 				}
 			}
 		}
@@ -230,13 +244,15 @@
 			switch(jsonBody.operation) {
 				case 'I':
 					// create a new item from input coordinates
-					createPolygon(geometry, inputID);
+					createPolygon(geometry, inputID, editMap, editPolygonArray, true);
+					createPolygon(geometry, inputID, viewMap, viewPolygonArray, false);
 					break;
 				case 'U':
 					// remove old item from the map
 					removePolygon(inputID);
 					// create a new item with the updated coordinates
-					createPolygon(geometry, inputID);
+					createPolygon(geometry, inputID, editMap, editPolygonArray, true);
+					createPolygon(geometry, inputID, viewMap, viewPolygonArray, false);
 					break;
 				case 'D':
 					// remove item from the map
@@ -256,8 +272,8 @@
 			// to modifying data features' geometries. Whenever such capability
 			// is added, we can simply use the API's addGeoJson call to parse the
 			// input
-			/*map.data.addGeoJson(jsonBody);
-			map.data.setStyle(function(feature) {
+			/*editMap.data.addGeoJson(jsonBody);
+			editMap.data.setStyle(function(feature) {
 				return{
 					strokeColor: '#FF0000',
 					strokeOpacity: 0.8,
@@ -269,7 +285,8 @@
 			*/
 			var features = jsonBody.features;
 			for(var i = 0; i < features.length; i++){
-				createPolygon(features[i].geometry, features[i].id);
+				createPolygon(features[i].geometry, features[i].id, editMap, editPolygonArray, true);
+				createPolygon(features[i].geometry, features[i].id, viewMap, viewPolygonArray, false);
 			}
 			pageLoadReceiver.close();
 		}

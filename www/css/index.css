@@ -108,6 +108,11 @@ body {
 
 /*** Insert tutorial or demo specific CSS here ***/
 #map_canvas {
+  width: 100%;
+  height: 500px;
+  margin: 2rem 0;
+}
+#map_canvas2 {
 	width: 100%;
 	height: 500px;
 	margin: 2rem 0;
