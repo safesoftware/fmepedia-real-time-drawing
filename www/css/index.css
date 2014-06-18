@@ -79,7 +79,7 @@ body {
   text-shadow: none !important;
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 450px) {
 	.hidden-tiny {
 		display: none;
 	}

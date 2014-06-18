@@ -5,7 +5,7 @@
 	<!-- Safe Software, 2013 -->
 	<!-- http://www.safe.com -->
 
-	<title>FME Server Real Time Map Creation Using WebSockets</title>
+	<title>FME Server Real Time Map Creation</title>
 
 	<!-- JQuery -->
 	<script src="libs/jquery-1.10.1.js"></script>
@@ -40,7 +40,7 @@
 					<span class="icon-bar"></span>
 				</a>
 
-			<div class="brand">FME Server<span class="hidden-tiny"> Real Time Map Creation Using WebSockets</span></div>
+			<div class="brand">FME Server<span class="hidden-tiny"> Real Time Map Creation</span></div>
 
 			<div class="nav-collapse collapse">
 				<a href="https://github.com/safesoftware/fmepedia-real-time-drawing" class="btn">
@@ -57,8 +57,11 @@
 
 	<div class="container">
 		<div class="row">
+			<br>
+			<p> This demo shows how FME Server can wait for and react to real time edits using WebSockets. </p>
+			<h4> Making edits:</h4>
 			<ul>
-				<li>Add polygons by using the toolbar on the top of the map.</li>
+				<li>Add polygons by using the toolbar on the top of the left map.</li>
 				<li>Edit polygons by choosing the hand tool and hovering over the polygons and dragging their vertices.</li>
 				<li>Delete polygons by right clicking on them. </li>
 			</ul>
@@ -130,9 +133,6 @@
 			  drawingModes: [
 					google.maps.drawing.OverlayType.POLYGON,
 			  ]
-			},
-			markerOptions: {
-			  icon: 'images/beachflag.png'
 			},
 			polygonOptions : {
 				strokeColor : "#FF0000",
@@ -270,7 +270,7 @@
 
 			// As of June 2014, the google maps API does not provide easy access
 			// to modifying data features' geometries. Whenever such capability
-			// is added, we can simply use the API's addGeoJson call to parse the
+			// is added, we can simply use the API's addGeoJSON call to parse the
 			// input
 			/*editMap.data.addGeoJson(jsonBody);
 			editMap.data.setStyle(function(feature) {
@@ -294,7 +294,9 @@
 		// When connection is established, send a request to FME Server
 		// For the existing items in the database, then close connection
 	  pageLoadSender.addEventListener("open", function(event) {
-			pageLoadSender.send("{ 'ws_op' : 'send', 'ws_msg' :''}");
+			var message = "{ 'ws_op' : 'send', 'ws_msg' :''}";
+			pageLoadSender.send(message);
+			log_message(message, 'sent_log');
 			pageLoadSender.close();
 		})
 	}
