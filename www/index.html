@@ -59,9 +59,7 @@
 		<div class="row">
 			<br>
 			<p> This demo shows how FME Server can wait for and react to real time edits using WebSockets. </p>
-			<p><b> How it works: </b></p>
-			<p> On page load, your browser uses a WebSocket to send an empty message to the FME Sever. Whenever FME Server receives a message through that specific WebSocket, it fires a workspace that returns the existing features in a PostGIS database and sends them back to waiting browsers in the GeoJSON format. Your browser then generates polygons out of the received GeoJSON message. When you make an edit to the map on the left side, the change you make is sent to FME Server as soon as you are done with it. FME Server has a workspace running that is always waiting for edits through a WebSocket. That workspace saves the received edits in the PostGIS database and informs all clients of the change it has recorded.</p>
-			<p><b> Making edits:</b></p>
+			<h4> Making edits:</h4>
 			<ul>
 				<li>Add polygons by using the toolbar on the top of the left map.</li>
 				<li>Edit polygons by choosing the hand tool and hovering over the polygons and dragging their vertices.</li>
