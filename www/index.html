@@ -57,14 +57,17 @@
 
 	<div class="container">
 		<div class="row">
-			<br>
-			<p> This demo shows how FME Server can wait for and react to real time edits using WebSockets. </p>
-			<h4> Making edits:</h4>
-			<ul>
-				<li>Add polygons by using the toolbar on the top of the left map.</li>
-				<li>Edit polygons by choosing the hand tool and hovering over the polygons and dragging their vertices.</li>
-				<li>Delete polygons by right clicking on them. </li>
-			</ul>
+			<div class="span12">
+				<br>
+				<p class="lead"> This demo shows how FME Server can wait for and react to real time edits using WebSockets. </p>
+				<h4>How it Works</h4>
+				<p>The left map is the editing application and the right map the view only application. Make edits in the map on the left and instantly see the edits on the map on the right. Note we are not just updating the features directly using JavaScript, a call is going back to the server to update the database and then the updated features are streamed back from the server.
+				<ul>
+					<li>Add polygons by using the toolbar on the top of the left map.</li>
+					<li>Edit polygons by choosing the hand tool and hovering over the polygons and dragging their vertices.</li>
+					<li>Delete polygons by right clicking on them. </li>
+				</ul>
+			</div>
 		</div>
 		<div class= "row">
 			<div class="span6">
