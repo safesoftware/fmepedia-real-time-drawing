@@ -5,7 +5,7 @@
 #    Command-line to run this workspace:
 #    
 #    
-#    "C:\Program Files\FME14320\fme.exe" C:\Users\BAO\Desktop\webscokets\fmepedia-tutorial-websockets-master\fme\workspaces\real-time-drawing-edits-tracker.fmw
+#    "/Applications/FME 2014/Engine/fme" /Users/arashouji/work/webscokets/final/fme/workspaces/real-time-drawing-edits-tracker.fmw
 #          --operation INSERT
 #          --objectid 33
 #          --geometry fse
@@ -13,7 +13,7 @@
 #    
 #! PASSWORD=""
 #! ATTR_TYPE_ENCODING="SDF"
-#! VIEW_POSITION="-498 -54"
+#! VIEW_POSITION="-495 0"
 #! SHOW_INFO_NODES="true"
 #! FME_STROKE_MAX_DEVIATION="0"
 #! BEGIN_PYTHON=""
@@ -22,7 +22,7 @@
 #! TITLE="Real Time Drawing: Real Time Edit  handler"
 #! MAX_LOG_FEATURES="200"
 #! END_TCL=""
-#! FME_BUILD_NUM="14320"
+#! FME_BUILD_NUM="14288"
 #! ZOOM_SCALE="100"
 #! CATEGORY=""
 #! REDIRECT_TERMINATORS="NONE"
@@ -31,24 +31,24 @@
 #! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
 #! END_PYTHON=""
 #! HISTORY="2014-06-17,Arash&lt;space&gt;Ouji,Initial&lt;space&gt;Creation"
-#! FME_DOCUMENT_PRIORGUID="1a3ec00c-e8e1-4398-80f9-ed34c779e2a8,4f2987ce-aabb-4289-b2a9-03f0d53d16f7,ac4e09f7-1054-49fd-a608-741f167d2f16,a02304ed-56e3-4f88-bd4d-cf0d259e9abb,46c2e4fa-4728-442c-bce2-b234dd8e367d,b1d0ae68-f013-11e3-8f18-9ba86a765da6,59d12534-f028-11e3-8f18-9ba86a765da6,915dcdbf-27d1-45ed-a2a4-49332af79cd1"
+#! FME_DOCUMENT_PRIORGUID="1a3ec00c-e8e1-4398-80f9-ed34c779e2a8,4f2987ce-aabb-4289-b2a9-03f0d53d16f7,ac4e09f7-1054-49fd-a608-741f167d2f16,a02304ed-56e3-4f88-bd4d-cf0d259e9abb,46c2e4fa-4728-442c-bce2-b234dd8e367d,b1d0ae68-f013-11e3-8f18-9ba86a765da6,59d12534-f028-11e3-8f18-9ba86a765da6,915dcdbf-27d1-45ed-a2a4-49332af79cd1,aba46afd-1572-433f-91cc-942822a8e3fe,79187fb8-f718-11e3-972c-eff75e717ee0"
 #! DOC_TOP_LEFT="-310 -1360"
 #! REQUIREMENTS_KEYWORD="none"
 #! SOURCE_ROUTING_FILE=""
 #! DESTINATION_ROUTING_FILE=""
 #! DESTINATION="NONE"
-#! LAST_SAVE_DATE="2014-06-17T11:25:49"
+#! LAST_SAVE_DATE="2014-06-19T15:49:22"
 #! FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Datum"
 #! WORKSPACE_VERSION="1"
 #! SOURCE="NONE"
-#! LAST_SAVE_BUILD="FME(R) 2014 SP1 (20140505 - Build 14320 - WIN32)"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP1 (20140325 - Build 14288 - macosx)"
 #! FME_SERVER_SERVICES=""
 #! LOG_MAX_RECORDED_FEATURES="200"
 #! LOG_FILE=""
 #! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
 #! BEGIN_TCL=""
 #! DOC_EXTENTS="3929 1135"
-#! FME_DOCUMENT_GUID="aba46afd-1572-433f-91cc-942822a8e3fe"
+#! FME_DOCUMENT_GUID="db3e35ca-f803-11e3-8b2b-84cde668e657"
 #! SHOW_ANNOTATIONS="true"
 #! IGNORE_READER_FAILURE="No"
 #! WARN_INVALID_XFORM_PARAM="Yes"
@@ -96,7 +96,7 @@
 #! </SERVICE>
 #! </SERVICES>
 #! <REPOSITORY
-#! NAME="real_time"
+#! NAME="Real-time-drawing"
 #! />
 #! <ITEM
 #! NAME="real-time-drawing-edits-tracker.fmw"
@@ -124,7 +124,7 @@
 #! IDENTIFIER="32"
 #! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Waits for user edits&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
 #! POSITION="-118 -1272"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! TOP_LEFT="-118 -1272"
@@ -135,28 +135,14 @@
 #! ANCHORED_NODE="25"
 #! />
 #! <COMMENT
-#! IDENTIFIER="35"
-#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Replace GeoJson with WKT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
-#! POSITION="1028 -1136"
-#! ORDER="5e+014"
-#! FOLLOW_ANCHOR="true"
-#! INFO_NODE="false"
-#! TOP_LEFT="1028 -1136"
-#! BOTTOM_RIGHT="1778 -1186"
-#! COLOUR="1,1,0.784314,0.192157"
-#! SIZE_POLICY="10"
-#! COMMENT_TYPE="REGULAR"
-#! ANCHORED_NODE="0"
-#! />
-#! <COMMENT
 #! IDENTIFIER="37"
-#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Parse received message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
-#! POSITION="406 -844"
-#! ORDER="5e+014"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px;&quot;&gt;Parse received message&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="396 -762"
+#! ORDER="5e+14"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
-#! TOP_LEFT="406 -844"
-#! BOTTOM_RIGHT="406 -844"
+#! TOP_LEFT="396 -762"
+#! BOTTOM_RIGHT="396 -762"
 #! COLOUR="1,1,0.784314,0.192157"
 #! SIZE_POLICY="8"
 #! COMMENT_TYPE="REGULAR"
@@ -166,7 +152,7 @@
 #! IDENTIFIER="40"
 #! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Create SQL Insert, Update or delete,&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;depending on type of user edit received&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;All statements are set to return the changed&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;row&apos;s id&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
 #! POSITION="2111 -679"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! TOP_LEFT="2111 -679"
@@ -180,7 +166,7 @@
 #! IDENTIFIER="43"
 #! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Execute Query on the database&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
 #! POSITION="2190 -1360"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! TOP_LEFT="2190 -1360"
@@ -193,12 +179,12 @@
 #! <COMMENT
 #! IDENTIFIER="44"
 #! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Update the received message with the &lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;result id when db transaction was an Insert&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
-#! POSITION="2862 -794"
-#! ORDER="5e+014"
+#! POSITION="2862 -766"
+#! ORDER="5e+14"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
-#! TOP_LEFT="2862 -794"
-#! BOTTOM_RIGHT="2862 -794"
+#! TOP_LEFT="2862 -766"
+#! BOTTOM_RIGHT="2862 -766"
 #! COLOUR="1,1,0.784314,0.192157"
 #! SIZE_POLICY="8"
 #! COMMENT_TYPE="REGULAR"
@@ -208,7 +194,7 @@
 #! IDENTIFIER="45"
 #! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Send the message back to all&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Users&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
 #! POSITION="2917 -1329"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! TOP_LEFT="2917 -1329"
@@ -217,6 +203,48 @@
 #! SIZE_POLICY="8"
 #! COMMENT_TYPE="REGULAR"
 #! ANCHORED_NODE="22"
+#! />
+#! <COMMENT
+#! IDENTIFIER="41"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px;&quot;&gt;Turn GeoJSON text&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px;&quot;&gt;into FME Polygon&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="456 -1280"
+#! ORDER="5e+14"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="456 -1280"
+#! BOTTOM_RIGHT="456 -1280"
+#! COLOUR="1,1,0.784314,0.196078"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="30"
+#! />
+#! <COMMENT
+#! IDENTIFIER="34"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px;&quot;&gt;Replace GeoJson with WKT&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px;&quot;&gt;For use in SQL query&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="1524 -819"
+#! ORDER="5e+14"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="1524 -819"
+#! BOTTOM_RIGHT="1524 -819"
+#! COLOUR="1,1,0.784314,0.196078"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="39"
+#! />
+#! <COMMENT
+#! IDENTIFIER="35"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px;&quot;&gt;Check if input&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px;&quot;&gt;polygon is valid&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="1064 -803"
+#! ORDER="5e+14"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="1064 -803"
+#! BOTTOM_RIGHT="1064 -803"
+#! COLOUR="1,1,0.784314,0.196078"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="46"
 #! />
 #! </COMMENTS>
 #! <CONSTANTS>
@@ -240,17 +268,7 @@
 #! BOTTOM_RIGHT="3619 -1466"
 #! STICKY="true"
 #! COLOUR="0.392157,0.203922,0.992157"
-#! CONTENTS="24 21 35 43 36 28 58 41 45 42 44 39 57 38 29 34 31 32 27 25 22 37 33 30 40 "
-#! />
-#! <BOOKMARK
-#! IDENTIFIER="34"
-#! NAME="Will not be needed if we user edits are sent in WKT format"
-#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
-#! TOP_LEFT="902 -796"
-#! BOTTOM_RIGHT="2088 -1285"
-#! STICKY="true"
-#! COLOUR="0.639216,0.254902,0.721569"
-#! CONTENTS="41 30 39 35 "
+#! CONTENTS="57 34 22 24 46 33 30 28 39 27 37 41 29 44 40 42 38 58 21 43 45 25 31 35 32 36 "
 #! />
 #! </BOOKMARKS>
 #! <TRANSFORMERS>
@@ -259,7 +277,7 @@
 #! TYPE="Creator"
 #! VERSION="5"
 #! POSITION="-218 -279"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! PARMS_EDITED="false"
 #! ENABLED="false"
 #! >
@@ -282,7 +300,7 @@
 #! TYPE="WebSocketReceiver"
 #! VERSION="0"
 #! POSITION="-162 -1095"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -301,8 +319,8 @@
 #! IDENTIFIER="28"
 #! TYPE="JSONExtractor"
 #! VERSION="1"
-#! POSITION="409 -952"
-#! ORDER="5e+014"
+#! POSITION="399 -870"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -325,7 +343,7 @@
 #! TYPE="AttributeCreator"
 #! VERSION="5"
 #! POSITION="2221 -910"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -350,8 +368,8 @@
 #! IDENTIFIER="30"
 #! TYPE="GeometryReplacer"
 #! VERSION="7"
-#! POSITION="985 -956"
-#! ORDER="5e+014"
+#! POSITION="402 -1097"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -376,7 +394,7 @@
 #! TYPE="GeometryExtractor"
 #! VERSION="7"
 #! POSITION="1530 -955"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -404,7 +422,7 @@
 #! TYPE="SQLExecutor"
 #! VERSION="6"
 #! POSITION="2225 -1078"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -446,8 +464,8 @@
 #! IDENTIFIER="38"
 #! TYPE="StringReplacer"
 #! VERSION="3"
-#! POSITION="2933 -965"
-#! ORDER="5e+014"
+#! POSITION="2932 -937"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -476,7 +494,7 @@
 #! TYPE="WebSocketSender"
 #! VERSION="0"
 #! POSITION="2913 -1156"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -501,7 +519,7 @@
 #! TYPE="SQLExecutor"
 #! VERSION="6"
 #! POSITION="739 -225"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -532,8 +550,8 @@
 #! IDENTIFIER="31"
 #! TYPE="Creator"
 #! VERSION="5"
-#! POSITION="-173 -876"
-#! ORDER="5e+014"
+#! POSITION="-166 -869"
+#! ORDER="5e+14"
 #! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
@@ -551,6 +569,75 @@
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="GEOMTYPE" PARM_VALUE="Geometry Object"/>
 #! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="46"
+#! TYPE="GeometryValidator"
+#! VERSION="1"
+#! POSITION="985 -944"
+#! ORDER="5e+14"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="db-operation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="db-operation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_issues{}.issue_found" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_issues{}.location_sample.x" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_issues{}.location_sample.y" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_issues{}.location_sample.z" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_issues{}.repair_state" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="REPAIRED"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="db-operation" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_issues{}.issue_found" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_issues{}.location_sample.x" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_issues{}.location_sample.y" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_issues{}.location_sample.z" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_PARM PARM_NAME="SHELL_VALIDATION" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CHECK_HOLE_TOUCHING_POLYGON" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="DUP_COORDS_CHECK_Z" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="PLANAR_TOLERANCE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_REMOVAL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TYPE_REPAIR" PARM_VALUE="TYPE_REPAIR"/>
+#! <XFORM_PARM PARM_NAME="SELF_INTERSECTING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SELF_INTERSECTING_PARAMS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PRESETS" PARM_VALUE="Custom"/>
+#! <XFORM_PARM PARM_NAME="ARC_ENDPOINT_TOLERANCE_MODE" PARM_VALUE="Auto"/>
+#! <XFORM_PARM PARM_NAME="RULES" PARM_VALUE="NAN_REMOVAL%&quot;&quot;%&quot;Yes&quot;%NULL_REMOVAL%&quot;&quot;%&quot;Yes&quot;%CONSECUTIVE_IDENTICAL_VERTICES_2D%CONSECUTIVE_IDENTICAL_VERTICES_2D_PARAMS%&quot;Yes&quot;%TYPE_REPAIR%TYPE_REPAIR_PARAMS%&quot;Yes&quot;%SELF_INTERSECTING%SELF_INTERSECTING_PARAMS%&quot;Yes&quot;%PLANAR_SURFACE%PLANAR_SURFACE_PARAMS%&quot;Yes&quot;%SHELL_VALIDATION%&quot;&quot;%&quot;Yes&quot;%SOLID_VOID_REPAIR%&quot;&quot;%&quot;Yes&quot;%OGC_SIMPLE_CHECK%&quot;&quot;%&quot;No&quot;%OGC_VALID_CHECK%&quot;&quot;%&quot;No&quot;%MISSING_TEXTURE_COORDINATES%&quot;&quot;%&quot;Yes&quot;%MISSING_VERTEX_NORMALS%&quot;&quot;%&quot;Yes&quot;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PLANAR_SURFACE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REPAIR" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="ISSUE_ATTR_NAME" PARM_VALUE="_issues"/>
+#! <XFORM_PARM PARM_NAME="ARC_ENDPOINT_TOLERANCE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MISSING_TEXTURE_COORDINATES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryValidator"/>
+#! <XFORM_PARM PARM_NAME="PLANAR_SURFACE_PARAMS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SOLID_VOID_REPAIR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="OGC_SIMPLE_CHECK" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TYPE_REPAIR_PARAMS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PLANAR_TOLERANCE_MODE" PARM_VALUE="Auto"/>
+#! <XFORM_PARM PARM_NAME="NAN_REMOVAL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MISSING_VERTEX_NORMALS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="OGC_VALID_CHECK" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CONSECUTIVE_IDENTICAL_VERTICES_2D" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CONSECUTIVE_IDENTICAL_VERTICES_2D_PARAMS" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
 #! </TRANSFORMERS>
 #! <FEAT_LINKS>
 #! <FEAT_LINK
@@ -566,15 +653,6 @@
 #! IDENTIFIER="36"
 #! SOURCE_NODE="28"
 #! TARGET_NODE="30"
-#! SOURCE_PORT_DESC="fo 0"
-#! TARGET_PORT_DESC="fi 0"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#! IDENTIFIER="41"
-#! SOURCE_NODE="30"
-#! TARGET_NODE="39"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
@@ -629,6 +707,24 @@
 #! IDENTIFIER="33"
 #! SOURCE_NODE="31"
 #! TARGET_NODE="25"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="47"
+#! SOURCE_NODE="30"
+#! TARGET_NODE="46"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="48"
+#! SOURCE_NODE="46"
+#! TARGET_NODE="39"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
@@ -727,12 +823,19 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME GeometryReplacer    INPUT  FEATURE_TYPE
 
 # -------------------------------------------------------------------------
 
+INCLUDE [   set RULES_LIST [split {NAN_REMOVAL%""%"Yes"%NULL_REMOVAL%""%"Yes"%CONSECUTIVE_IDENTICAL_VERTICES_2D%CONSECUTIVE_IDENTICAL_VERTICES_2D_PARAMS%"Yes"%TYPE_REPAIR%TYPE_REPAIR_PARAMS%"Yes"%SELF_INTERSECTING%SELF_INTERSECTING_PARAMS%"Yes"%PLANAR_SURFACE%PLANAR_SURFACE_PARAMS%"Yes"%SHELL_VALIDATION%""%"Yes"%SOLID_VOID_REPAIR%""%"Yes"%OGC_SIMPLE_CHECK%""%"No"%OGC_VALID_CHECK%""%"No"%MISSING_TEXTURE_COORDINATES%""%"Yes"%MISSING_VERTEX_NORMALS%""%"Yes"} {%} ];   set RULE_MACRO_STRING "MACRO RULE_LOOKUP ";   foreach RULE_BIT $RULES_LIST {     if {[string compare $RULE_BIT NAN_REMOVAL]==0} { append RULE_MACRO_STRING " "; }     elseif {[string compare $RULE_BIT NULL_REMOVAL]==0} { append RULE_MACRO_STRING " "; }     elseif {[string compare $RULE_BIT CONSECUTIVE_IDENTICAL_VERTICES_2D]==0} { append RULE_MACRO_STRING " "; }     elseif {[string compare $RULE_BIT TYPE_REPAIR]==0} { append RULE_MACRO_STRING "TYPE_REPAIR "; }     elseif {[string compare $RULE_BIT SELF_INTERSECTING]==0} { append RULE_MACRO_STRING " "; }     elseif {[string compare $RULE_BIT MISSING_VERTEX_NORMALS]==0} { append RULE_MACRO_STRING " "; }     elseif {[string compare $RULE_BIT PLANAR_SURFACE]==0} { append RULE_MACRO_STRING " "; }     elseif {[string compare $RULE_BIT SHELL_VALIDATION]==0} { append RULE_MACRO_STRING " "; }     elseif {[string compare $RULE_BIT SOLID_VOID_REPAIR]==0} { append RULE_MACRO_STRING " "; }     elseif {[string compare $RULE_BIT OGC_SIMPLE_CHECK]==0} { append RULE_MACRO_STRING " "; }     elseif {[string compare $RULE_BIT OGC_VALID_CHECK]==0} { append RULE_MACRO_STRING " "; }     elseif {[string compare $RULE_BIT MISSING_TEXTURE_COORDINATES]==0} { append RULE_MACRO_STRING " "; };   };   puts $RULE_MACRO_STRING ]
+
+
+FACTORY_DEF * GeometryValidationFactory    FACTORY_NAME GeometryValidator    INPUT  FEATURE_TYPE GeometryReplacer_OUTPUT    ISSUE_ATTR_NAME _issues    ISSUES_TO_CHECK $(RULE_LOOKUP)    PARAMS CONSECUTIVE_IDENTICAL_VERTICES_2D AUTO_REFINE NO CONSECUTIVE_IDENTICAL_VERTICES_2D CHECK_Z Yes PLANAR_SURFACE TOLERANCE_MODE Auto PLANAR_SURFACE TOLERANCE <Unused> TYPE_REPAIR ARC_ENDPOINT_TOLERANCE_MODE Auto TYPE_REPAIR ARC_ENDPOINT_TOLERANCE <Unused> SELF_INTERSECTING CHECK_HOLE_TOUCHING_POLYGON No    OUTPUT VALID FEATURE_TYPE GeometryValidator_PASSED
+
+# -------------------------------------------------------------------------
+
 # First determine which function we are going to be using -- we can do
 # this statically at parse time for efficiency sake
 
 MACRO GeometryExtractor_Function
 INCLUDE [ if {{wkt} == {fmebinary} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY,"_geometry") }           } elseif {{wkt} == {fmehex} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY_HEX,"_geometry") }           } elseif {{wkt} == {fmexml} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE,"_geometry") }           } elseif {{wkt} == {polyline} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_POLYLINE,"_geometry",<Unused>) }           } elseif {{wkt} == {wkt} ||                      {wkt} == {wkb} ||                      {wkt} == {wkbhex} } {               puts {MACRO GeometryExtractor_Function @OGCGeometry(to_attribute,wkt,"_geometry",1.1) }           } elseif {{wkt} == {GEOJSON} ||                     {wkt} == {ESRIJSON} } {               puts {MACRO GeometryExtractor_Function @JSONGeometry(TO_ATTRIBUTE,wkt,"_geometry") }           } elseif {{wkt} == {KML} } {               puts {MACRO GeometryExtractor_Function @KMLGeometry(TO_ATTRIBUTE,"_geometry",<Unused>) }           } elseif {{wkt} == {GEORSS_SIMPLE} } {               puts {MACRO GeometryExtractor_Function @GeoRSSGeometry(TO_ATTRIBUTE,wkt,"_geometry",<Unused>) }           } elseif {{wkt} == {GML_2.1.2} ||                     {wkt} == {GML_3.1.1} ||                     {wkt} == {GML_3.2.1} } {               puts {MACRO GeometryExtractor_Function @GMLGeometry(TO_ATTRIBUTE,wkt,"_geometry",<Unused>) }           } elseif {{wkt} == {geohash} } {               puts {MACRO GeometryExtractor_Function @GeoHash(TO_ATTRIBUTE,"_geometry",<Unused>) }           } elseif {{wkt} == {ogeosms} } {               puts {MACRO GeometryExtractor_Function @OGCGeometry(to_attribute,wkt,"_geometry",<Unused>) }           } elseif {{wkt} == {geosms} ||                     {wkt} == {geo}    } {               puts {MACRO GeometryExtractor_Function @OGCGeometry(to_attribute,wkt,"_geometry") }           }         ]
-FACTORY_DEF * TeeFactory    FACTORY_NAME GeometryExtractor    INPUT  FEATURE_TYPE GeometryReplacer_OUTPUT    OUTPUT FEATURE_TYPE GeometryExtractor_OUTPUT         $(GeometryExtractor_Function)
+FACTORY_DEF * TeeFactory    FACTORY_NAME GeometryExtractor    INPUT  FEATURE_TYPE GeometryValidator_PASSED    OUTPUT FEATURE_TYPE GeometryExtractor_OUTPUT         $(GeometryExtractor_Function)
 
 # -------------------------------------------------------------------------
 FACTORY_DEF * AttrSetFactory FACTORY_NAME AttributeCreator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE GeometryExtractor_OUTPUT ATTR sql "FME_CONDITIONAL:DEFAULT_VALUE'_FME_NO_OP_'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>db-operation<closeparen> = I'insert<space>into<space>real_time_drawing<space><openparen>geom<closeparen><space>values<space><openparen>ST_GeomFromText<openparen><apos><at>Value<openparen>_geometry<closeparen><apos><comma><space>900914<closeparen><closeparen><space>RETURNING<space>id'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>db-operation<closeparen> = U'update<space>real_time_drawing<space>set<space>geom=ST_GeomFromText<openparen><apos><at>Value<openparen>_geometry<closeparen><apos><comma><space>900914<closeparen><space>where<space>id<space>=<space><at>Value<openparen>id<closeparen><space><space>RETURNING<space>id'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>db-operation<closeparen> = D'delete<space>from<space>real_time_drawing<space>where<space>id<space>=<space><at>Value<openparen>id<closeparen><space><space>RETURNING<space>id'FME_NUM_CONDITIONS4___"    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_OUTPUT 
@@ -746,8 +849,8 @@ FACTORY_DEF * TeeFactory   FACTORY_NAME "SQLExecutor_2 INITIATOR Output Nuker"  
 
 MACRO casemac
 INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
-Tcl2 proc StringReplacer_773ebf5a_4a54_4f8f_9f99_45aadf269c175_replacer { findText replaceText invalidValue} {     set attrs [split \"message\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       set noMatch true;       if {$length > 0} {          if {{NO} == {YES}} {             set newAttrVal [regsub $(casemac) -all -- $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             set newAttrVal [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };          if { $newAttrVal != $attrVal } {             set noMatch false;             FME_SetAttribute $attr $newAttrVal;          };       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME StringReplacer    INPUT  FEATURE_TYPE SQLExecutor_2_RESULT    OUTPUT FEATURE_TYPE StringReplacer_OUTPUT         @Tcl2("StringReplacer_773ebf5a_4a54_4f8f_9f99_45aadf269c175_replacer {<quote>id<quote>:<space><quote>null<quote>} {@EvaluateExpression(STRING_ENCODED,<quote>id<quote>:<space><quote><at>Value<openparen>id<closeparen><quote>,StringReplacer)} {_FME_NO_OP_}")
+Tcl2 proc StringReplacer_db41e2b0_f803_11e3_8b2b_84cde668e6571_replacer { findText replaceText invalidValue} {     set attrs [split \"message\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       set noMatch true;       if {$length > 0} {          if {{NO} == {YES}} {             set newAttrVal [regsub $(casemac) -all -- $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             set newAttrVal [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };          if { $newAttrVal != $attrVal } {             set noMatch false;             FME_SetAttribute $attr $newAttrVal;          };       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME StringReplacer    INPUT  FEATURE_TYPE SQLExecutor_2_RESULT    OUTPUT FEATURE_TYPE StringReplacer_OUTPUT         @Tcl2("StringReplacer_db41e2b0_f803_11e3_8b2b_84cde668e6571_replacer {<quote>id<quote>:<space><quote>null<quote>} {@EvaluateExpression(STRING_ENCODED,<quote>id<quote>:<space><quote><at>Value<openparen>id<closeparen><quote>,StringReplacer)} {_FME_NO_OP_}")
 
 # -------------------------------------------------------------------------
 
