@@ -5,13 +5,13 @@
 #    Command-line to run this workspace:
 #    
 #    
-#    "C:\Program Files\FME14320\fme.exe" C:\Users\BAO\Desktop\webscokets\fmepedia-tutorial-websockets-master\fme\workspaces\return-features-on-db.fmw
+#    "/Applications/FME 2014/Engine/fme" /Users/arashouji/work/webscokets/final/fme/workspaces/return-features-on-db.fmw
 #          --SourceDataset_POSTGIS_3 gisdb
 #    
 #    
 #! PASSWORD=""
 #! ATTR_TYPE_ENCODING="SDF"
-#! VIEW_POSITION="-57 15"
+#! VIEW_POSITION="-63 15"
 #! SHOW_INFO_NODES="true"
 #! FME_STROKE_MAX_DEVIATION="0"
 #! BEGIN_PYTHON=""
@@ -20,7 +20,7 @@
 #! TITLE="Real Time Drawing: Return all features on database"
 #! MAX_LOG_FEATURES="200"
 #! END_TCL=""
-#! FME_BUILD_NUM="14320"
+#! FME_BUILD_NUM="14288"
 #! ZOOM_SCALE="100"
 #! CATEGORY="XML/GML/KML/Web"
 #! REDIRECT_TERMINATORS="NONE"
@@ -29,24 +29,24 @@
 #! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
 #! END_PYTHON=""
 #! HISTORY="2014-06-17,Arash&lt;space&gt;Ouji,Initial&lt;space&gt;Creation"
-#! FME_DOCUMENT_PRIORGUID="f31a1598-f02d-11e3-8547-8e70f5755bfa,40b72592-f327-11e3-8547-8e70f5755bfa,07b855ae-5972-480c-98bb-0171a11cd889,849a52d4-cdfa-46a5-820d-236ca0e9ffeb"
-#! DOC_TOP_LEFT="9 -1031"
+#! FME_DOCUMENT_PRIORGUID="f31a1598-f02d-11e3-8547-8e70f5755bfa,40b72592-f327-11e3-8547-8e70f5755bfa,07b855ae-5972-480c-98bb-0171a11cd889,849a52d4-cdfa-46a5-820d-236ca0e9ffeb,a535b821-7af8-4cbe-a2bd-b46317e4b633"
+#! DOC_TOP_LEFT="9 -1021"
 #! REQUIREMENTS_KEYWORD="none"
 #! SOURCE_ROUTING_FILE=""
 #! DESTINATION_ROUTING_FILE=""
 #! DESTINATION="NONE"
-#! LAST_SAVE_DATE="2014-06-17T11:27:42"
+#! LAST_SAVE_DATE="2014-06-23T10:20:32"
 #! FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
 #! WORKSPACE_VERSION="1"
 #! SOURCE="NONE"
-#! LAST_SAVE_BUILD="FME(R) 2014 SP1 (20140505 - Build 14320 - WIN32)"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP1 (20140325 - Build 14288 - macosx)"
 #! FME_SERVER_SERVICES=""
 #! LOG_MAX_RECORDED_FEATURES="200"
 #! LOG_FILE=""
 #! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
 #! BEGIN_TCL=""
-#! DOC_EXTENTS="2166 974"
-#! FME_DOCUMENT_GUID="a535b821-7af8-4cbe-a2bd-b46317e4b633"
+#! DOC_EXTENTS="2166 964"
+#! FME_DOCUMENT_GUID="a5e9cece-faf7-11e3-8d81-88418e841d80"
 #! SHOW_ANNOTATIONS="true"
 #! IGNORE_READER_FAILURE="No"
 #! WARN_INVALID_XFORM_PARAM="Yes"
@@ -401,7 +401,7 @@
 #! IDENTIFIER="13"
 #! FEAT_GEOMTYPE="postgis_none postgis_point postgis_multipoint postgis_linestring postgis_multilinestring postgis_circularstring postgis_compoundcurve postgis_multicurve postgis_polygon postgis_multipolygon postgis_curvepolygon postgis_multisurface postgis_triangle postgis_polyhedralsurface postgis_tin postgis_geometrycollection"
 #! POSITION="45 -568"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! COLLAPSED="true"
 #! KEYWORD="POSTGIS_1"
 #! ENABLED="true"
@@ -486,7 +486,7 @@
 #! IDENTIFIER="12"
 #! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;This workspace is subscribed to an FME Server Topic. When the topic receives a message, this workspace read the contents of the databse and sends them to all listeners through web sockets&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
 #! POSITION="9 -57"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! TOP_LEFT="9 -57"
@@ -500,7 +500,7 @@
 #! IDENTIFIER="15"
 #! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Aggregate all features&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
 #! POSITION="1639 -501"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! TOP_LEFT="1639 -501"
@@ -514,7 +514,7 @@
 #! IDENTIFIER="22"
 #! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Create Final Json message text&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
 #! POSITION="2119 -507"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! TOP_LEFT="2119 -507"
@@ -526,13 +526,13 @@
 #! />
 #! <COMMENT
 #! IDENTIFIER="24"
-#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Send the Json message containing&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;all existing items through web sockets&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
-#! POSITION="2125 -1031"
-#! ORDER="5e+014"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px;&quot;&gt;Send the Json message containing&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px;&quot;&gt;all existing items through web socket&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="2100 -1021"
+#! ORDER="5e+14"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
-#! TOP_LEFT="2125 -1031"
-#! BOTTOM_RIGHT="2125 -1031"
+#! TOP_LEFT="2100 -1021"
+#! BOTTOM_RIGHT="2100 -1021"
 #! COLOUR="1,1,0.784314,0.192157"
 #! SIZE_POLICY="8"
 #! COMMENT_TYPE="REGULAR"
@@ -549,8 +549,8 @@
 #! TOP_LEFT="519 -309"
 #! BOTTOM_RIGHT="1539 -1005"
 #! STICKY="true"
-#! COLOUR="0.603922,0.741176,0.109804"
-#! CONTENTS="18 19 16 "
+#! COLOUR="0.603922,0.737255,0.109804"
+#! CONTENTS="16 19 18 "
 #! />
 #! </BOOKMARKS>
 #! <TRANSFORMERS>
@@ -558,8 +558,8 @@
 #! IDENTIFIER="2"
 #! TYPE="WebSocketSender"
 #! VERSION="0"
-#! POSITION="2175 -839"
-#! ORDER="5e+014"
+#! POSITION="2162 -829"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -582,7 +582,7 @@
 #! TYPE="GeometryExtractor"
 #! VERSION="7"
 #! POSITION="803 -471"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -607,7 +607,7 @@
 #! TYPE="Aggregator"
 #! VERSION="11"
 #! POSITION="1611 -615"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -648,7 +648,7 @@
 #! TYPE="StringConcatenator"
 #! VERSION="6"
 #! POSITION="2175 -615"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -668,7 +668,7 @@
 #! TYPE="JSONTemplater"
 #! VERSION="0"
 #! POSITION="815 -666"
-#! ORDER="5e+014"
+#! ORDER="5e+14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -786,7 +786,7 @@ GUI INTEGER POSTGIS_IN_PORT_POSTGIS_1 Port:
 DEFAULT_MACRO POSTGIS_IN_USER_NAME_POSTGIS_1 dbuser
 POSTGIS_1_USER_NAME "$(POSTGIS_IN_USER_NAME_POSTGIS_1)"
 GUI TEXT POSTGIS_IN_USER_NAME_POSTGIS_1 Username:
-DEFAULT_MACRO POSTGIS_IN_PASSWORD_POSTGIS_1 fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszrrTAqo+oM1TKyS9gRmXLSxzMzLv1GT4kImyEtE0DZIwiWgGjqJdcuaLHt9ERre/ttD4wHWt3PWRKlEfsFSc1IIc2b8j3tdAlPZLFtxLYhGEMnr7ORRPoVNMOoaWRU95o/FND5WRKZuOgooZQK+nMqzUE51jwCzHWqWkQfHgXMvk41qvBXwU5YNCd9nmrtAWeXwHC7234QjC6goqIq+km3IDY5JU5Qjbgv5ezy3jNPCEHHzC1vGSFu5GxFrofPPSW+OkxNIc4eHDHUHl9/MHOD4PYaD9zT+pMKs5Puk7byDroLQC75YdSWT8liy6jAUovG+nAII2f5RhErDLfuG57YTj65pdQEpJB)
+DEFAULT_MACRO POSTGIS_IN_PASSWORD_POSTGIS_1 fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszdNW2AYuKxelMRR7nU6ncm3KQ40ZN4JgbIgIwRfseEUvHLKgshKHFF/iJ7Avn/YwC+ncaf2DNiMdnMA0WYYuC3mRkUo+t8nQLPw9gHAy1VRM/3VIRx0DIVFKjZ1nNfx+xO2A1h+6DOCX/IwjXtllWbOi93HqkOB09IVe89Ppk+r+/XB563HdmKAlzYjQ0AJQ9M26aihLzN95LwowibkdT7TGQKZenlS+TAwuFbBLr6kAUaGXLx+Upkc7LPMrPXX7JrPbgFCT/K/5d4sawAIjmnwJhfPUwB+IWF6PlFcGr3uk2gacXz4ee71FWY3rxorIg7lOO7/RKvF9ftdA36XXNUUgEekjhRSC7)
 POSTGIS_1_PASSWORD "$(POSTGIS_IN_PASSWORD_POSTGIS_1)"
 GUI OPTIONAL PASSWORD POSTGIS_IN_PASSWORD_POSTGIS_1 Password:
 DEFAULT_MACRO POSTGIS_IN_EXPOSE_ATTRS_GROUP_POSTGIS_1 
@@ -896,8 +896,8 @@ FACTORY_DEF * AggregateFactory    FACTORY_NAME Aggregator_2    INPUT  FEATURE_TY
 
 # -------------------------------------------------------------------------
 
-Tcl2 proc StringConcatenator_2_05590003_f5fd_48d8_b261_b1156c6800920_doSetAttr {attrText} {    FME_SetAttribute [FME_DecodeText {_concatenated}] [FME_DecodeText $attrText] }
-FACTORY_DEF * TeeFactory    FACTORY_NAME StringConcatenator_2    INPUT  FEATURE_TYPE Aggregator_2_AGGREGATE    OUTPUT FEATURE_TYPE StringConcatenator_2_OUTPUT        @Tcl2("StringConcatenator_2_05590003_f5fd_48d8_b261_b1156c6800920_doSetAttr {@EvaluateExpression(STRING_ENCODED,<opencurly><quote>type<quote>:<space><quote>FeatureCollection<quote><comma><lf><space><space><quote>features<quote>:<space><openbracket><lf><space><space><space><space><space><space><space><space><at>Value<openparen>_result<closeparen><lf><space><space><space><space><space><space><space><space><closebracket><lf><space><space><space><space><closecurly>,StringConcatenator_2)} ")
+Tcl2 proc StringConcatenator_2_a645e4c0_faf7_11e3_8d81_88418e841d8011_doSetAttr {attrText} {    FME_SetAttribute [FME_DecodeText {_concatenated}] [FME_DecodeText $attrText] }
+FACTORY_DEF * TeeFactory    FACTORY_NAME StringConcatenator_2    INPUT  FEATURE_TYPE Aggregator_2_AGGREGATE    OUTPUT FEATURE_TYPE StringConcatenator_2_OUTPUT        @Tcl2("StringConcatenator_2_a645e4c0_faf7_11e3_8d81_88418e841d8011_doSetAttr {@EvaluateExpression(STRING_ENCODED,<opencurly><quote>type<quote>:<space><quote>FeatureCollection<quote><comma><lf><space><space><quote>features<quote>:<space><openbracket><lf><space><space><space><space><space><space><space><space><at>Value<openparen>_result<closeparen><lf><space><space><space><space><space><space><space><space><closebracket><lf><space><space><space><space><closecurly>,StringConcatenator_2)} ")
 
 # -------------------------------------------------------------------------
 
