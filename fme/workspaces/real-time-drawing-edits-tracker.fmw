@@ -6,11 +6,14 @@
 #    
 #    
 #    "/Applications/FME 2014/Engine/fme" /Users/arashouji/work/webscokets/final/fme/workspaces/real-time-drawing-edits-tracker.fmw
+#          --operation INSERT
+#          --objectid 33
+#          --geometry fse
 #    
 #    
 #! PASSWORD=""
 #! ATTR_TYPE_ENCODING="SDF"
-#! VIEW_POSITION="-492 0"
+#! VIEW_POSITION="-417 -381"
 #! SHOW_INFO_NODES="true"
 #! FME_STROKE_MAX_DEVIATION="0"
 #! BEGIN_PYTHON=""
@@ -19,7 +22,7 @@
 #! TITLE="Real Time Drawing: Real Time Edit  handler"
 #! MAX_LOG_FEATURES="200"
 #! END_TCL=""
-#! FME_BUILD_NUM="14288"
+#! FME_BUILD_NUM="14387"
 #! ZOOM_SCALE="100"
 #! CATEGORY=""
 #! REDIRECT_TERMINATORS="NONE"
@@ -28,24 +31,24 @@
 #! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
 #! END_PYTHON=""
 #! HISTORY="2014-06-17,Arash&lt;space&gt;Ouji,Initial&lt;space&gt;Creation"
-#! FME_DOCUMENT_PRIORGUID="1a3ec00c-e8e1-4398-80f9-ed34c779e2a8,4f2987ce-aabb-4289-b2a9-03f0d53d16f7,ac4e09f7-1054-49fd-a608-741f167d2f16,a02304ed-56e3-4f88-bd4d-cf0d259e9abb,46c2e4fa-4728-442c-bce2-b234dd8e367d,b1d0ae68-f013-11e3-8f18-9ba86a765da6,59d12534-f028-11e3-8f18-9ba86a765da6,915dcdbf-27d1-45ed-a2a4-49332af79cd1,aba46afd-1572-433f-91cc-942822a8e3fe,79187fb8-f718-11e3-972c-eff75e717ee0,db3e35ca-f803-11e3-8b2b-84cde668e657"
+#! FME_DOCUMENT_PRIORGUID="1a3ec00c-e8e1-4398-80f9-ed34c779e2a8,4f2987ce-aabb-4289-b2a9-03f0d53d16f7,ac4e09f7-1054-49fd-a608-741f167d2f16,a02304ed-56e3-4f88-bd4d-cf0d259e9abb,46c2e4fa-4728-442c-bce2-b234dd8e367d,b1d0ae68-f013-11e3-8f18-9ba86a765da6,59d12534-f028-11e3-8f18-9ba86a765da6,915dcdbf-27d1-45ed-a2a4-49332af79cd1,aba46afd-1572-433f-91cc-942822a8e3fe,79187fb8-f718-11e3-972c-eff75e717ee0,db3e35ca-f803-11e3-8b2b-84cde668e657,41e37136-2884-11e4-87e9-fc1e6fd434f5"
 #! DOC_TOP_LEFT="-310 -1360"
 #! REQUIREMENTS_KEYWORD="none"
 #! SOURCE_ROUTING_FILE=""
 #! DESTINATION_ROUTING_FILE=""
 #! DESTINATION="NONE"
-#! LAST_SAVE_DATE="2014-06-23T10:25:42"
+#! LAST_SAVE_DATE="2014-08-20T09:14:43"
 #! FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Datum"
 #! WORKSPACE_VERSION="1"
 #! SOURCE="NONE"
-#! LAST_SAVE_BUILD="FME(R) 2014 SP1 (20140325 - Build 14288 - macosx)"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP3 (20140811 - Build 14387 - macosx)"
 #! FME_SERVER_SERVICES=""
 #! LOG_MAX_RECORDED_FEATURES="200"
 #! LOG_FILE=""
 #! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
 #! BEGIN_TCL=""
 #! DOC_EXTENTS="3929 1135"
-#! FME_DOCUMENT_GUID="eb3b4d88-fafa-11e3-8d81-88418e841d80"
+#! FME_DOCUMENT_GUID="1876036c-2885-11e4-89f4-e63e2b6afccb"
 #! SHOW_ANNOTATIONS="true"
 #! IGNORE_READER_FAILURE="No"
 #! WARN_INVALID_XFORM_PARAM="Yes"
@@ -91,6 +94,52 @@
 #! />
 #! </PROPERTIES>
 #! </SERVICE>
+#! <SERVICE
+#! NAME="fmenotification"
+#! >
+#! <PROPERTIES>
+#! <PROPERTY
+#! CATEGORY="FMEUSERPROPDATA"
+#! NAME="ADVANCED"
+#! VALUE=""
+#! />
+#! <PROPERTY
+#! CATEGORY="FMEUSERPROPDATA"
+#! NAME="CONTENT_FORMAT"
+#! VALUE="JSON"
+#! />
+#! <PROPERTY
+#! CATEGORY="FMEUSERPROPDATA"
+#! NAME="FAILURE_TOPICS"
+#! VALUE=""
+#! />
+#! <PROPERTY
+#! CATEGORY="FMEUSERPROPDATA"
+#! NAME="HTTP_DATASET"
+#! VALUE=""
+#! />
+#! <PROPERTY
+#! CATEGORY="FMEUSERPROPDATA"
+#! NAME="NOTIFICATION_WRITER"
+#! VALUE=""
+#! />
+#! <PROPERTY
+#! CATEGORY="FMEUSERPROPDATA"
+#! NAME="PUBLISHER"
+#! VALUE=""
+#! />
+#! <PROPERTY
+#! CATEGORY="FMEUSERPROPDATA"
+#! NAME="SUCCESS_TOPICS"
+#! VALUE=""
+#! />
+#! <PROPERTY
+#! CATEGORY="FMEUSERPROPDATA"
+#! NAME="TOPICS_LIST"
+#! VALUE="real_time_drawing_edit_tracker_failure"
+#! />
+#! </PROPERTIES>
+#! </SERVICE>
 #! </SERVICES>
 #! <REPOSITORY
 #! NAME="Real-time-drawing"
@@ -100,6 +149,21 @@
 #! />
 #! </FMESERVER>
 #! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR operation Operation:"
+#! DEFAULT_VALUE="INSERT"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR objectid Object ID:"
+#! DEFAULT_VALUE="33"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR geometry Geometry:"
+#! DEFAULT_VALUE="fse"
+#! IS_STAND_ALONE="true"
+#! />
 #! </GLOBAL_PARAMETERS>
 #! <COMMENTS>
 #! <COMMENT
@@ -240,7 +304,7 @@
 #! BOTTOM_RIGHT="1282 -499"
 #! STICKY="true"
 #! COLOUR="0.858824,0.486275,0.321569"
-#! CONTENTS="20 16 19 "
+#! CONTENTS="16 20 19 "
 #! />
 #! <BOOKMARK
 #! IDENTIFIER="23"
@@ -250,7 +314,7 @@
 #! BOTTOM_RIGHT="3619 -1466"
 #! STICKY="true"
 #! COLOUR="0.392157,0.203922,0.992157"
-#! CONTENTS="35 22 37 44 24 25 43 28 57 36 31 39 40 32 30 27 33 34 38 42 29 48 41 47 21 46 58 45 "
+#! CONTENTS="30 48 32 37 47 39 27 43 28 40 22 25 58 33 29 57 24 34 41 31 44 45 42 35 46 38 21 36 "
 #! />
 #! </BOOKMARKS>
 #! <TRANSFORMERS>
@@ -295,7 +359,7 @@
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WebSocketReceiver"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="HOST" PARM_VALUE="ws://localhost:7078"/>
+#! <XFORM_PARM PARM_NAME="HOST" PARM_VALUE="wss://localhost:7078"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
 #! IDENTIFIER="28"
@@ -437,7 +501,7 @@
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="POSTGIS_PORT,&quot;OPTIONAL INTEGER&quot;,POSTGIS&lt;space&gt;Port:,POSTGIS_USER_NAME,&quot;OPTIONAL TEXT&quot;,POSTGIS&lt;space&gt;Username:,POSTGIS_HOST,&quot;OPTIONAL TEXT&quot;,POSTGIS&lt;space&gt;Host:,POSTGIS_PASSWORD,&quot;OPTIONAL PASSWORD&quot;,POSTGIS&lt;space&gt;Password:"/>
 #! <XFORM_PARM PARM_NAME="POSTGIS_HOST" PARM_VALUE="fmepedia2014-safe-software.fmecloud.com"/>
-#! <XFORM_PARM PARM_NAME="POSTGIS_PASSWORD" PARM_VALUE="fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszKL3z5ZgAl7EaD9eNt+ke05h2SVbIgCojJKhz0vIhEF/STMYy3p/VAz8zxTNgliVjgw8OHdAf9mkV6Y4O44N4KxHAHczRuqVqb7GF7+95UdiZUwaPbzCp1JKb4s62bzp7e2JmkPTP+RPPNqaDQPTC+8USHDCwCh2l5VnRIn7vUH3TUOcoV7tY72DbHEBVzPq4ST/7WJNCZN5X5P33RkDXrS2Q5Q6Zs3uEquG4lFoH24s8tTqq8XWfw+jTVHYngGFAt1F9UEwzdmGAPvmSuEHrgAMrUfzZDMcDx+a64qhETnLk9N0rvlhEvNEYRTsacl9B/PNFGIn+2ex7Iiw5ITLQcBQ3K2OtK7Nf)"/>
+#! <XFORM_PARM PARM_NAME="POSTGIS_PASSWORD" PARM_VALUE="fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMsz7YF+Y9RNJLR/17XUtqsn5dxh3bCJGwhlgXpn8XUtBcXSyDiDQRQvX3z70UyRml/2ojFtjZRW7tRZV/s4BH/yfHC+pKH0geLsMh3FsdeAM24QFBHy/p39zkDtd23lcvrAs1KK+mb7FJhSTk/UgV4GUrfwNUXDH0AU3lCGeT/zorW8mrEai3swIri1+TazZGuVrvABhkmEgYTauamp2WoK76XfuF0T72o5dSUPJQ6dp5VhS+0/Jc2hw6rCZIAf1rmYHzF4KSuS/QE4Mf69MY0z4WnYsIqyXmOzydH1HBxX04ehUlRd+f3s445jEMKYMvGUXb+hwq0l/znv70ViEOLPVcNKUATbPywI)"/>
 #! <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
 #! <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Keep Result Attributes if Conflict"/>
 #! <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="POSTGIS"/>
@@ -494,7 +558,7 @@
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WebSocketSender"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="HOST" PARM_VALUE="ws://localhost:7078"/>
+#! <XFORM_PARM PARM_NAME="HOST" PARM_VALUE="wss://localhost:7078"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
 #! IDENTIFIER="19"
@@ -523,7 +587,7 @@
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="POSTGIS_PORT,&quot;OPTIONAL INTEGER&quot;,POSTGIS&lt;space&gt;Port:,POSTGIS_USER_NAME,&quot;OPTIONAL TEXT&quot;,POSTGIS&lt;space&gt;Username:,POSTGIS_HOST,&quot;OPTIONAL TEXT&quot;,POSTGIS&lt;space&gt;Host:,POSTGIS_PASSWORD,&quot;OPTIONAL PASSWORD&quot;,POSTGIS&lt;space&gt;Password:"/>
 #! <XFORM_PARM PARM_NAME="POSTGIS_HOST" PARM_VALUE="fmepedia2014-safe-software.fmecloud.com"/>
-#! <XFORM_PARM PARM_NAME="POSTGIS_PASSWORD" PARM_VALUE="fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszPZmImrohotYbgmTOLB4HbxLcy+3Eif6wOkyO5qCZa4IaQNEpaJqgKklTjZBC85RvJXIF5C1EviTaLUnzRDulOtIgUjWS9Rt+j8GXZ26S6uHDkPt6SDOu1SZ5rKPf8HVdLyYZz7rnar04hqGqFTov5ZxdLFk2/uVlkwmZ6otgLgaAF5/v5ySJ7e/xyt860SaGNQ+EkKOcFHwlat0lhIo8cHNcg25F6GLGQ7OFDsFxzKb5hDvbcnvHtYKZ7jgF2o3N8Mf1DI5rJu/JoEKmtiwUxkfa4MGSfUgJJLv2Q/Le6yTcg0RqqFeZudX1fsGYfcZGev69Uj9FfQiRjb9yIcCZ0Ae7J2t7CArD)"/>
+#! <XFORM_PARM PARM_NAME="POSTGIS_PASSWORD" PARM_VALUE="fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszXep6Kd/btGwC8iPNa7qiJ35T87FIaMCSuaYuACDjH8BrZHCRzXavviyeNuJgQ6HVmvCeCdYkJSc+IiXV6fJmEyAxkJ5Xg+vbFSWRIdXPxY+1TctRJvHK6njAmtPx3TisDShUFjryjn7V8mYq9B+gfPoD9TUkRNI2QeZTFJj5uSeSSElHUFTBh/Ga/YJ577Vx0e3jN+8kdynUn3Ou/XWKNyOTZBbZiTZ+LW34IR6Xc0rsk0tDpfHZQFPZ5G0pGQzM7eO5P5tO7+0Y53tE302gXxuBlDaM4YCGS6nuLRMGyc4IZ/IasnNVuOFl/u3NsNuivMSJ23JMxDSmV3SsYQyc6m34+/xKOvh7)"/>
 #! <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
 #! <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Keep Result Attributes if Conflict"/>
 #! <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="POSTGIS"/>
@@ -723,6 +787,15 @@
 #! </LOOKUP_TABLES>
 #! </WORKSPACE>
 #! 
+DEFAULT_MACRO operation INSERT
+GUI TEXT operation Operation:
+DEFAULT_MACRO objectid 33
+GUI TEXT objectid Object ID:
+DEFAULT_MACRO geometry fse
+GUI TEXT geometry Geometry:
+INCLUDE [ if {{$(operation)} == {}} { puts_real {Parameter 'operation' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(objectid)} == {}} { puts_real {Parameter 'objectid' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(geometry)} == {}} { puts_real {Parameter 'geometry' must be given a value.}; exit 1; }; ]
 #! START_HEADER
 #! START_WB_HEADER
 READER_TYPE NULL
@@ -776,7 +849,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME Creator_3_Cloner    INPUT FEATURE_TYPE 
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * COM.safe.fme.factory.WebSocketFactory    FACTORY_NAME WebSocketReceiver       INPUT  FEATURE_TYPE Creator_3_CREATED    DIRECTION RECEIVE    INITIATION_SEQUENCE CONNECT    PERSISTENT NO    HOST "@EvaluateExpression(STRING,ws://localhost:7078,WebSocketReceiver)"    PREAMBLE "@EvaluateExpression(STRING,<opencurly><lf><lf>ws_op<space>:<space><apos>open<apos><comma><lf><lf>ws_stream_id<space>:<space><apos>real_time_drawing_update_in<apos><comma><lf><lf><closecurly>,WebSocketReceiver)"    ATTRNAME "message"    OUTPUT OUTPUT FEATURE_TYPE WebSocketReceiver_OUTPUT
+FACTORY_DEF * COM.safe.fme.factory.WebSocketFactory    FACTORY_NAME WebSocketReceiver       INPUT  FEATURE_TYPE Creator_3_CREATED    DIRECTION RECEIVE    INITIATION_SEQUENCE CONNECT    PERSISTENT NO    HOST "@EvaluateExpression(STRING,wss://localhost:7078,WebSocketReceiver)"    PREAMBLE "@EvaluateExpression(STRING,<opencurly><lf><lf>ws_op<space>:<space><apos>open<apos><comma><lf><lf>ws_stream_id<space>:<space><apos>real_time_drawing_update_in<apos><comma><lf><lf><closecurly>,WebSocketReceiver)"    ATTRNAME "message"    OUTPUT OUTPUT FEATURE_TYPE WebSocketReceiver_OUTPUT
 
 # -------------------------------------------------------------------------
 
@@ -813,7 +886,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME GeometryExtractor    INPUT  FEATURE_TYP
 # -------------------------------------------------------------------------
 FACTORY_DEF * AttrSetFactory FACTORY_NAME AttributeCreator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE GeometryExtractor_OUTPUT ATTR sql "FME_CONDITIONAL:DEFAULT_VALUE'_FME_NO_OP_'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>db-operation<closeparen> = I'insert<space>into<space>real_time_drawing<space><openparen>geom<closeparen><space>values<space><openparen>ST_GeomFromText<openparen><apos><at>Value<openparen>_geometry<closeparen><apos><comma><space>900914<closeparen><closeparen><space>RETURNING<space>id'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>db-operation<closeparen> = U'update<space>real_time_drawing<space>set<space>geom=ST_GeomFromText<openparen><apos><at>Value<openparen>_geometry<closeparen><apos><comma><space>900914<closeparen><space>where<space>id<space>=<space><at>Value<openparen>id<closeparen><space><space>RETURNING<space>id'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>db-operation<closeparen> = D'delete<space>from<space>real_time_drawing<space>where<space>id<space>=<space><at>Value<openparen>id<closeparen><space><space>RETURNING<space>id'FME_NUM_CONDITIONS4___"    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_OUTPUT 
 # -------------------------------------------------------------------------
-MACRO SQLExecutor_2_DIRECTIVES PORT 5432 USER_NAME dbuser HOST fmepedia2014-safe-software.fmecloud.com PASSWORD fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszKL3z5ZgAl7EaD9eNt+ke05h2SVbIgCojJKhz0vIhEF/STMYy3p/VAz8zxTNgliVjgw8OHdAf9mkV6Y4O44N4KxHAHczRuqVqb7GF7+95UdiZUwaPbzCp1JKb4s62bzp7e2JmkPTP+RPPNqaDQPTC+8USHDCwCh2l5VnRIn7vUH3TUOcoV7tY72DbHEBVzPq4ST/7WJNCZN5X5P33RkDXrS2Q5Q6Zs3uEquG4lFoH24s8tTqq8XWfw+jTVHYngGFAt1F9UEwzdmGAPvmSuEHrgAMrUfzZDMcDx+a64qhETnLk9N0rvlhEvNEYRTsacl9B/PNFGIn+2ex7Iiw5ITLQcBQ3K2OtK7Nf)
+MACRO SQLExecutor_2_DIRECTIVES PORT 5432 USER_NAME dbuser HOST fmepedia2014-safe-software.fmecloud.com PASSWORD fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMsz7YF+Y9RNJLR/17XUtqsn5dxh3bCJGwhlgXpn8XUtBcXSyDiDQRQvX3z70UyRml/2ojFtjZRW7tRZV/s4BH/yfHC+pKH0geLsMh3FsdeAM24QFBHy/p39zkDtd23lcvrAs1KK+mb7FJhSTk/UgV4GUrfwNUXDH0AU3lCGeT/zorW8mrEai3swIri1+TazZGuVrvABhkmEgYTauamp2WoK76XfuF0T72o5dSUPJQ6dp5VhS+0/Jc2hw6rCZIAf1rmYHzF4KSuS/QE4Mf69MY0z4WnYsIqyXmOzydH1HBxX04ehUlRd+f3s445jEMKYMvGUXb+hwq0l/znv70ViEOLPVcNKUATbPywI)
 
 FACTORY_DEF * QueryFactory    FACTORY_NAME SQLExecutor_2    INPUT  FEATURE_TYPE AttributeCreator_OUTPUT    QUERY_SQL            @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>sql<closeparen>,SQLExecutor_2)    READER_TYPE          POSTGIS    READER_DATASET       "gisdb"    COMBINE_ATTRIBUTES   PREFER_RESULT    COMBINE_GEOMETRY     QUERY_ONLY    READER_PARAMS        $(SQLExecutor_2_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE SQLExecutor_2_RESULT    OUTPUT QUERY FEATURE_TYPE SQLExecutor_2_INITIATOR
 
@@ -822,17 +895,17 @@ FACTORY_DEF * TeeFactory   FACTORY_NAME "SQLExecutor_2 INITIATOR Output Nuker"  
 
 MACRO casemac
 INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
-Tcl2 proc StringReplacer_eb3ea55a_fafa_11e3_8d81_88418e841d803_replacer { findText replaceText invalidValue} {     set attrs [split \"message\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       set noMatch true;       if {$length > 0} {          if {{NO} == {YES}} {             set newAttrVal [regsub $(casemac) -all -- $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             set newAttrVal [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };          if { $newAttrVal != $attrVal } {             set noMatch false;             FME_SetAttribute $attr $newAttrVal;          };       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME StringReplacer    INPUT  FEATURE_TYPE SQLExecutor_2_RESULT    OUTPUT FEATURE_TYPE StringReplacer_OUTPUT         @Tcl2("StringReplacer_eb3ea55a_fafa_11e3_8d81_88418e841d803_replacer {<quote>id<quote>:<space><quote>null<quote>} {@EvaluateExpression(STRING_ENCODED,<quote>id<quote>:<space><quote><at>Value<openparen>id<closeparen><quote>,StringReplacer)} {_FME_NO_OP_}")
+Tcl2 proc StringReplacer_1876c32e_2885_11e4_89f4_e63e2b6afccb0_replacer { findText replaceText invalidValue} {     set attrs [split \"message\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       set noMatch true;       if {$length > 0} {          if {{NO} == {YES}} {             set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];          } else {             set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];          };          if { $newAttrVal ne $attrVal } {             set noMatch false;             FME_SetAttribute $attr $newAttrVal;          };       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME StringReplacer    INPUT  FEATURE_TYPE SQLExecutor_2_RESULT    OUTPUT FEATURE_TYPE StringReplacer_OUTPUT         @Tcl2("StringReplacer_1876c32e_2885_11e4_89f4_e63e2b6afccb0_replacer {<quote>id<quote>:<space><quote>null<quote>} {@EvaluateExpression(STRING_ENCODED,<quote>id<quote>:<space><quote><at>Value<openparen>id<closeparen><quote>,StringReplacer)} {_FME_NO_OP_}")
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * COM.safe.fme.factory.WebSocketFactory    FACTORY_NAME WebSocketSender       INPUT  FEATURE_TYPE StringReplacer_OUTPUT    DIRECTION SEND    INITIATION_SEQUENCE CONNECT    HOST "@EvaluateExpression(STRING,ws://localhost:7078,WebSocketSender)"    PREAMBLE "@EvaluateExpression(STRING,<opencurly><lf><lf>ws_op<space>:<space><apos>open<apos><comma><lf><lf>ws_stream_id<space>:<space><apos>real_time_drawing_update_out<apos><comma><lf><lf><closecurly>,WebSocketSender)"    DATA "@EvaluateExpression(STRING,@EvaluateExpression(STRING_ENCODED,<opencurly><lf><lf>ws_op<space>:<space><apos>send<apos><comma><lf><lf>ws_msg<space>:<space><at>Value<openparen>message<closeparen><lf><lf><closecurly>,WebSocketSender),WebSocketSender)"
+FACTORY_DEF * COM.safe.fme.factory.WebSocketFactory    FACTORY_NAME WebSocketSender       INPUT  FEATURE_TYPE StringReplacer_OUTPUT    DIRECTION SEND    INITIATION_SEQUENCE CONNECT    HOST "@EvaluateExpression(STRING,wss://localhost:7078,WebSocketSender)"    PREAMBLE "@EvaluateExpression(STRING,<opencurly><lf><lf>ws_op<space>:<space><apos>open<apos><comma><lf><lf>ws_stream_id<space>:<space><apos>real_time_drawing_update_out<apos><comma><lf><lf><closecurly>,WebSocketSender)"    DATA "@EvaluateExpression(STRING,@EvaluateExpression(STRING_ENCODED,<opencurly><lf><lf>ws_op<space>:<space><apos>send<apos><comma><lf><lf>ws_msg<space>:<space><at>Value<openparen>message<closeparen><lf><lf><closecurly>,WebSocketSender),WebSocketSender)"
 
 # -------------------------------------------------------------------------
 
 # -------------------------------------------------------------------------
-MACRO SQLExecutor_3_DIRECTIVES PORT 5432 USER_NAME dbuser HOST fmepedia2014-safe-software.fmecloud.com PASSWORD fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszPZmImrohotYbgmTOLB4HbxLcy+3Eif6wOkyO5qCZa4IaQNEpaJqgKklTjZBC85RvJXIF5C1EviTaLUnzRDulOtIgUjWS9Rt+j8GXZ26S6uHDkPt6SDOu1SZ5rKPf8HVdLyYZz7rnar04hqGqFTov5ZxdLFk2/uVlkwmZ6otgLgaAF5/v5ySJ7e/xyt860SaGNQ+EkKOcFHwlat0lhIo8cHNcg25F6GLGQ7OFDsFxzKb5hDvbcnvHtYKZ7jgF2o3N8Mf1DI5rJu/JoEKmtiwUxkfa4MGSfUgJJLv2Q/Le6yTcg0RqqFeZudX1fsGYfcZGev69Uj9FfQiRjb9yIcCZ0Ae7J2t7CArD)
+MACRO SQLExecutor_3_DIRECTIVES PORT 5432 USER_NAME dbuser HOST fmepedia2014-safe-software.fmecloud.com PASSWORD fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszXep6Kd/btGwC8iPNa7qiJ35T87FIaMCSuaYuACDjH8BrZHCRzXavviyeNuJgQ6HVmvCeCdYkJSc+IiXV6fJmEyAxkJ5Xg+vbFSWRIdXPxY+1TctRJvHK6njAmtPx3TisDShUFjryjn7V8mYq9B+gfPoD9TUkRNI2QeZTFJj5uSeSSElHUFTBh/Ga/YJ577Vx0e3jN+8kdynUn3Ou/XWKNyOTZBbZiTZ+LW34IR6Xc0rsk0tDpfHZQFPZ5G0pGQzM7eO5P5tO7+0Y53tE302gXxuBlDaM4YCGS6nuLRMGyc4IZ/IasnNVuOFl/u3NsNuivMSJ23JMxDSmV3SsYQyc6m34+/xKOvh7)
 
 FACTORY_DEF * QueryFactory    FACTORY_NAME SQLExecutor_3    INPUT  FEATURE_TYPE Creator_2_CREATED    QUERY_SQL            FME_SQL_DELIMITER<space><semicolon><lf>create<space>table<space>real_time_drawing<openparen>id<space>serial<space>NOT<space>NULL<closeparen><semicolon><lf>SELECT<space>AddGeometryColumn<openparen><apos>real_time_drawing<apos><comma><space><apos>geom<apos><comma><space>900914<comma><space><apos>Geometry<apos><comma><space>2<closeparen><semicolon>    READER_TYPE          POSTGIS    READER_DATASET       "gisdb"    COMBINE_ATTRIBUTES   PREFER_RESULT    COMBINE_GEOMETRY     QUERY_ONLY    READER_PARAMS        $(SQLExecutor_3_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE SQLExecutor_3_RESULT    OUTPUT QUERY FEATURE_TYPE SQLExecutor_3_INITIATOR
 
