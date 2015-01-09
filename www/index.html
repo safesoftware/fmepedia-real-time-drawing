@@ -99,209 +99,208 @@
 	var editPolygonArray = [];
 	var viewPolygonArray = [];
 	window.onload = function initialize() {
+    $.getJSON("http://demos.fmeserver.com.s3.amazonaws.com/server-demo-config.json", function(config) {
+      FMEServer.init(config.initObject);
+    
 
-		FMEServer.init({
-			server : "https://demos-safe-software.fmecloud.com",
-			token : "35bd9bbd4c15116518070ce4fe4a38e1d2a26292"
-		});
+      /*** FME Server WebSocket initialization ***/
+      // Sends edits to FME Server
+      updateSender = FMEServer.getWebSocketConnection('real_time_drawing_update_in');
 
-		/*** FME Server WebSocket initialization ***/
-		// Sends edits to FME Server
-		updateSender = FMEServer.getWebSocketConnection('real_time_drawing_update_in');
+      // Receives saved edits from FME Server
+      updateReceiver = FMEServer.getWebSocketConnection('real_time_drawing_update_out');
 
-		// Receives saved edits from FME Server
-		updateReceiver = FMEServer.getWebSocketConnection('real_time_drawing_update_out');
+      // On page load, sends a request to FME Server to get all existing items
+      pageLoadSender = FMEServer.getWebSocketConnection('real_time_drawing_on_page_load_in');
 
-		// On page load, sends a request to FME Server to get all existing items
-		pageLoadSender = FMEServer.getWebSocketConnection('real_time_drawing_on_page_load_in');
+      // Remains open until FME Server sends all existing items to it
+      pageLoadReceiver = FMEServer.getWebSocketConnection('real_time_drawing_on_page_load_out');
 
-		// Remains open until FME Server sends all existing items to it
-		pageLoadReceiver = FMEServer.getWebSocketConnection('real_time_drawing_on_page_load_out');
+      /*** Google Maps initialization ***/
+      var myLatLng = new google.maps.LatLng(49.138077,-122.857472);
+      var myOptions = {
+        zoom: 11,
+        center: myLatLng
+      }
 
-		/*** Google Maps initialization ***/
-		var myLatLng = new google.maps.LatLng(49.138077,-122.857472);
-		var myOptions = {
-			zoom: 11,
-			center: myLatLng
-		}
+      editMap = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+      viewMap = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
 
-		editMap = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-		viewMap = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
+      var drawingManager = new google.maps.drawing.DrawingManager({
+        drawingMode: google.maps.drawing.OverlayType.MARKER,
+        drawingControl: true,
+        drawingControlOptions: {
+          position: google.maps.ControlPosition.TOP_CENTER,
+          drawingModes: [
+            google.maps.drawing.OverlayType.POLYGON,
+          ]
+        },
+        polygonOptions : {
+          strokeColor : "#FF0000",
+          strokeOpacity : 0.8,
+          strokeWeight : 2,
+          fillColor : "#FF0000",
+          fillOpacity : 0.35
+        }
+        });
+      drawingManager.setMap(editMap);
 
-		var drawingManager = new google.maps.drawing.DrawingManager({
-			drawingMode: google.maps.drawing.OverlayType.MARKER,
-			drawingControl: true,
-			drawingControlOptions: {
-			  position: google.maps.ControlPosition.TOP_CENTER,
-			  drawingModes: [
-					google.maps.drawing.OverlayType.POLYGON,
-			  ]
-			},
-			polygonOptions : {
-				strokeColor : "#FF0000",
-				strokeOpacity : 0.8,
-				strokeWeight : 2,
-				fillColor : "#FF0000",
-				fillOpacity : 0.35
-			}
-		  });
-		drawingManager.setMap(editMap);
+      google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
+        drawingManager.setDrawingMode(null);
+        generateUpdateRequest(polygon, null, 'I');
+      });
 
-		google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
-			drawingManager.setDrawingMode(null);
-			generateUpdateRequest(polygon, null, 'I');
-		});
+      // Sets up event listeners for existing polygons
+      function setupListeners(poly) {
+        google.maps.event.addListener(poly.getPath(), 'set_at', function() {
+          //Post an update
+          generateUpdateRequest(poly, poly.id, 'U');
+        });
 
-		// Sets up event listeners for existing polygons
-		function setupListeners(poly) {
-			google.maps.event.addListener(poly.getPath(), 'set_at', function() {
-				//Post an update
-				generateUpdateRequest(poly, poly.id, 'U');
-			});
+        google.maps.event.addListener(poly.getPath(), 'insert_at', function() {
+          //post an update
+          generateUpdateRequest(poly, poly.id, 'U');
+        });
 
-			google.maps.event.addListener(poly.getPath(), 'insert_at', function() {
-				//post an update
-				generateUpdateRequest(poly, poly.id, 'U');
-			});
+        google.maps.event.addListener(poly, 'rightclick', function(event) {
+          for(i in editPolygonArray) {
+            if(this === editPolygonArray[i]) {
+              //Post a delete
+              generateUpdateRequest(poly, poly.id, 'D');
+            }
+          }
+        });
 
-			google.maps.event.addListener(poly, 'rightclick', function(event) {
-				for(i in editPolygonArray) {
-					if(this === editPolygonArray[i]) {
-						//Post a delete
-						generateUpdateRequest(poly, poly.id, 'D');
-					}
-				}
-			});
+        google.maps.event.addListener(poly, 'mouseover', function(event) {
+          this.setEditable(true);
+        });
 
-			google.maps.event.addListener(poly, 'mouseover', function(event) {
-				this.setEditable(true);
-			});
+        google.maps.event.addListener(poly, 'mouseout', function(event) {
+          this.setEditable(false);
+        });
+      }
 
-			google.maps.event.addListener(poly, 'mouseout', function(event) {
-				this.setEditable(false);
-			});
-		}
+      // Sends a request to the FME Server containing the edit the user
+      // has made. FME Server parses the request and updates the database
+      function generateUpdateRequest(polygon, polyID, polyUpdateType) {
+        var gglePolyArray = polygon.getPath();
+        var jsonStr = '';
+        gglePolyArray.forEach(function(item, index) {
+          if(index == (gglePolyArray.length - 1)) {
+            jsonStr = jsonStr +'[' + item.lng() + ',' + item.lat() + ']';
+          } else {
+            jsonStr = jsonStr +'[' + item.lng() + ',' + item.lat() + '],';
+          }
+        });
+        jsonStr = "{ 'ws_op' : 'send', 'ws_msg' : "+ "'"+ '{"geometry":{ "type": "Polygon", "coordinates": [['+ jsonStr +']]' +'}, "id": '+ '"' + polyID + '", "operation": ' + '"' + polyUpdateType + '"' +"}'}";
+        updateSender.send(jsonStr);
+        polygon.setMap(null);
+        log_message(jsonStr, 'sent_log');
+      }
 
-		// Sends a request to the FME Server containing the edit the user
-		// has made. FME Server parses the request and updates the database
-		function generateUpdateRequest(polygon, polyID, polyUpdateType) {
-			var gglePolyArray = polygon.getPath();
-			var jsonStr = '';
-			gglePolyArray.forEach(function(item, index) {
-				if(index == (gglePolyArray.length - 1)) {
-					jsonStr = jsonStr +'[' + item.lng() + ',' + item.lat() + ']';
-				} else {
-					jsonStr = jsonStr +'[' + item.lng() + ',' + item.lat() + '],';
-				}
-			});
-			jsonStr = "{ 'ws_op' : 'send', 'ws_msg' : "+ "'"+ '{"geometry":{ "type": "Polygon", "coordinates": [['+ jsonStr +']]' +'}, "id": '+ '"' + polyID + '", "operation": ' + '"' + polyUpdateType + '"' +"}'}";
-			updateSender.send(jsonStr);
-			polygon.setMap(null);
-			log_message(jsonStr, 'sent_log');
-		}
+      // Create google maps polygon
+      function createPolygon(geometry, polyID, addMap, addArray, editable){
+        var polyCoords = [];
+        var coords = geometry.coordinates[0];
+        for(var j = 0; j < coords.length; j++) {
+          var lng = coords[j][0];
+          var lat = coords[j][1];
+          polyCoords.push(new google.maps.LatLng(lat, lng));
+        }
+        var poly = new google.maps.Polygon({
+          paths : polyCoords,
+          id : polyID,
+          strokeColor : "#FF0000",
+          strokeOpacity : 0.8,
+          strokeWeight : 2,
+          fillColor : "#FF0000",
+          fillOpacity : 0.35
+        });
+        poly.setMap(addMap);
+        addArray.push(poly);
+        if(editable){
+          setupListeners(poly);
+        }
+      }
 
-		// Create google maps polygon
-		function createPolygon(geometry, polyID, addMap, addArray, editable){
-			var polyCoords = [];
-			var coords = geometry.coordinates[0];
-			for(var j = 0; j < coords.length; j++) {
-				var lng = coords[j][0];
-				var lat = coords[j][1];
-				polyCoords.push(new google.maps.LatLng(lat, lng));
-			}
-			var poly = new google.maps.Polygon({
-				paths : polyCoords,
-				id : polyID,
-				strokeColor : "#FF0000",
-				strokeOpacity : 0.8,
-				strokeWeight : 2,
-				fillColor : "#FF0000",
-				fillOpacity : 0.35
-			});
-			poly.setMap(addMap);
-			addArray.push(poly);
-			if(editable){
-				setupListeners(poly);
-			}
-		}
+      // Remove google maps polygon
+      function removePolygon(polyID){
+        for(i in editPolygonArray) {
+          if(parseInt(polyID) === parseInt(editPolygonArray[i].id)) {
+            editPolygonArray[i].setMap(null);
+            editPolygonArray.splice(i, 1);
+            viewPolygonArray[i].setMap(null);
+            viewPolygonArray.splice(i, 1);
+          }
+        }
+      }
 
-		// Remove google maps polygon
-		function removePolygon(polyID){
-			for(i in editPolygonArray) {
-				if(parseInt(polyID) === parseInt(editPolygonArray[i].id)) {
-					editPolygonArray[i].setMap(null);
-					editPolygonArray.splice(i, 1);
-					viewPolygonArray[i].setMap(null);
-					viewPolygonArray.splice(i, 1);
-				}
-			}
-		}
+      // Receives items changes in the database from the FME Server
+      // and updates the view
+      updateReceiver.onmessage = function(event) {
+        log_message(event.data, 'rcvd_log');
+        var jsonBody = JSON.parse(event.data);
+        var geometry = jsonBody.geometry;
+        var inputID  = jsonBody.id;
+        switch(jsonBody.operation) {
+          case 'I':
+            // create a new item from input coordinates
+            createPolygon(geometry, inputID, editMap, editPolygonArray, true);
+            createPolygon(geometry, inputID, viewMap, viewPolygonArray, false);
+            break;
+          case 'U':
+            // remove old item from the map
+            removePolygon(inputID);
+            // create a new item with the updated coordinates
+            createPolygon(geometry, inputID, editMap, editPolygonArray, true);
+            createPolygon(geometry, inputID, viewMap, viewPolygonArray, false);
+            break;
+          case 'D':
+            // remove item from the map
+            removePolygon(inputID);
+            break;
+          default:
+        }
+      }
 
-		// Receives items changes in the database from the FME Server
-		// and updates the view
-		updateReceiver.onmessage = function(event) {
-			log_message(event.data, 'rcvd_log');
-			var jsonBody = JSON.parse(event.data);
-			var geometry = jsonBody.geometry;
-			var inputID  = jsonBody.id;
-			switch(jsonBody.operation) {
-				case 'I':
-					// create a new item from input coordinates
-					createPolygon(geometry, inputID, editMap, editPolygonArray, true);
-					createPolygon(geometry, inputID, viewMap, viewPolygonArray, false);
-					break;
-				case 'U':
-					// remove old item from the map
-					removePolygon(inputID);
-					// create a new item with the updated coordinates
-					createPolygon(geometry, inputID, editMap, editPolygonArray, true);
-					createPolygon(geometry, inputID, viewMap, viewPolygonArray, false);
-					break;
-				case 'D':
-					// remove item from the map
-					removePolygon(inputID);
-					break;
-				default:
-			}
-		}
+      // Wait for the FME Server to send the existing items
+      // on the database, then add them to map and close connection
+      pageLoadReceiver.onmessage = function(event) {
+        log_message(event.data, 'rcvd_log');
+        var jsonBody = JSON.parse(event.data);
 
-		// Wait for the FME Server to send the existing items
-		// on the database, then add them to map and close connection
-		pageLoadReceiver.onmessage = function(event) {
-			log_message(event.data, 'rcvd_log');
-			var jsonBody = JSON.parse(event.data);
+        // As of June 2014, the google maps API does not provide easy access
+        // to modifying data features' geometries. Whenever such capability
+        // is added, we can simply use the API's addGeoJSON call to parse the
+        // input
+        /*editMap.data.addGeoJson(jsonBody);
+        editMap.data.setStyle(function(feature) {
+          return{
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35,
+          };
+        });
+        */
+        var features = jsonBody.features;
+        for(var i = 0; i < features.length; i++){
+          createPolygon(features[i].geometry, features[i].id, editMap, editPolygonArray, true);
+          createPolygon(features[i].geometry, features[i].id, viewMap, viewPolygonArray, false);
+        }
+        pageLoadReceiver.close();
+      }
 
-			// As of June 2014, the google maps API does not provide easy access
-			// to modifying data features' geometries. Whenever such capability
-			// is added, we can simply use the API's addGeoJSON call to parse the
-			// input
-			/*editMap.data.addGeoJson(jsonBody);
-			editMap.data.setStyle(function(feature) {
-				return{
-					strokeColor: '#FF0000',
-					strokeOpacity: 0.8,
-					strokeWeight: 2,
-					fillColor: '#FF0000',
-					fillOpacity: 0.35,
-				};
-			});
-			*/
-			var features = jsonBody.features;
-			for(var i = 0; i < features.length; i++){
-				createPolygon(features[i].geometry, features[i].id, editMap, editPolygonArray, true);
-				createPolygon(features[i].geometry, features[i].id, viewMap, viewPolygonArray, false);
-			}
-			pageLoadReceiver.close();
-		}
-
-		// When connection is established, send a request to FME Server
-		// For the existing items in the database, then close connection
-	  pageLoadSender.addEventListener("open", function(event) {
-			var message = "{ 'ws_op' : 'send', 'ws_msg' :''}";
-			pageLoadSender.send(message);
-			log_message(message, 'sent_log');
-			pageLoadSender.close();
-		})
+      // When connection is established, send a request to FME Server
+      // For the existing items in the database, then close connection
+      pageLoadSender.addEventListener("open", function(event) {
+        var message = "{ 'ws_op' : 'send', 'ws_msg' :''}";
+        pageLoadSender.send(message);
+        log_message(message, 'sent_log');
+        pageLoadSender.close();
+      })
+    });
 	}
 
 	/*** Function to log sent and received WebSocket messages ***/
