@@ -127,7 +127,7 @@
       viewMap = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
 
       var drawingManager = new google.maps.drawing.DrawingManager({
-        drawingMode: google.maps.drawing.OverlayType.MARKER,
+        drawingMode: google.maps.drawing.OverlayType.POLYGON,
         drawingControl: true,
         drawingControlOptions: {
           position: google.maps.ControlPosition.TOP_CENTER,
@@ -146,7 +146,6 @@
       drawingManager.setMap(editMap);
 
       google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
-        drawingManager.setDrawingMode(null);
         generateUpdateRequest(polygon, null, 'I');
       });
 
